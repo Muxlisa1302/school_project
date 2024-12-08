@@ -13,11 +13,11 @@ def student_list(request):
 
 
 def student_create(request):
-    if request.method == 'Post':
-         first_name = request.Post.get('first_name')
-         last_name = request.Post.get('last_name')
-         age =request.Post.get('age')
-         email = request.Post.get('email')
+    if request.method == 'POST':
+         first_name = request.POST.get('first_name')
+         last_name = request.POST.get('last_name')
+         age =request.POST.get('age')
+         email = request.POST.get('email')
          if first_name and last_name and age and email:
              Student.objects.create(
                  first_name=first_name,

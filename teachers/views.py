@@ -10,9 +10,9 @@ def teacher_list(request):
 
 def teacher_create(request):
     if request.method == 'POST':
-         first_name = request.Post.get('first_name')
-         last_name = request.Post.get('last_name')
-         subject =request.Post.get('subject')
+         first_name = request.POST.get('first_name')
+         last_name = request.POST.get('last_name')
+         subject =request.POST.get('subject')
          if first_name and last_name and subject:
              Teacher.objects.create(
                  first_name=first_name,
@@ -32,4 +32,4 @@ def teacher_detail(request, pk):
 def teacher_delete(request, pk):
     teacher = get_object_or_404(Teacher, pk=pk)
     teacher.delete()
-    return redirect('teachers :list')
+    return redirect('teachers:list')

@@ -5,5 +5,5 @@ class Student(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     age = models.PositiveIntegerField()
-    email = models.CharField(max_length=150)
+    email = models.TextField()
 

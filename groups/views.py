@@ -10,8 +10,8 @@ def group_list(request):
 
 def group_create(request):
     if request.method == 'POST':
-         group_name = request.Post.get('group_name')
-         group_type = request.Post.get('group_type')
+         group_name = request.POST.get('group_name')
+         group_type = request.POST.get('group_type')
          if group_name and group_type:
              Group.objects.create(
                  group_name=group_name,
@@ -30,4 +30,4 @@ def group_detail(request, pk):
 def group_delete(request, pk):
     group = get_object_or_404(Group, pk=pk)
     group.delete()
-    return redirect('groups :list')
+    return redirect('groups:list')
