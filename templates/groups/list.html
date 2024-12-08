@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Groups List</title>
+</head>
+<body>
+    <h1>Groups List</h1>
+    <button><a href="{% url 'home' %}">Back Home</a></button>
+    <button><a href="{% url 'teachers:create' %}">Create Group</a></button><br>
+        {% for group in group %}
+    <a href="{% url 'groups:detail' pk=groups %}"><h3>{{ group.group_name }} {{ group.group_type }}</h3></a>
+    {% empty %}
+        <h3>No groups</h3>
+    {% endfor %}
+</body>
+</html>
